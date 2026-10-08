@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- Meta viewport agar responsif di layar perangkat seluler -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Amin - SMKS Brantas Karangkates</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --warna-utama: #0056b3;
+      --warna-sekunder: #003d80;
+      --warna-teks: #333333;
+      --warna-latar: #f8f9fa;
+      --warna-kartu: #ffffff;
+      --jarak: 1.5rem;
+      --border-radius: 8px;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--warna-teks);
+      background-color: var(--warna-latar);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: var(--jarak) 0;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      text-align: center;
+      margin-bottom: var(--jarak);
+      color: var(--warna-utama);
+    }
+
+    .site-header {
+      background-color: var(--warna-utama);
+      color: #ffffff;
+      padding: 1rem 0;
+    }
+
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .site-header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    .site-header nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    .site-header nav a:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--warna-utama);
+    }
+
+    .hero-text span {
+      color: var(--warna-utama);
+    }
+
+    .skills-section,
+    .gallery-section {
+      padding: 2rem 0;
+    }
+
+    .card,
+    .gallery-item {
+      background: var(--warna-kartu);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover,
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .gallery-item figcaption h3 {
+      margin-bottom: 0.5rem;
+      color: var(--warna-utama);
+    }
+
+    .skills-grid,
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--jarak);
+    }
+
+    .site-footer {
+      background-color: var(--warna-sekunder);
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .hero {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .profile-img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        gap: 3rem;
+      }
+      
+      .profile-img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --warna-teks: #e0e0e0;
+        --warna-latar: #121212;
+        --warna-kartu: #1e1e1e;
+        --warna-utama: #3788d8;
+      }
+
+      .site-header {
+        background-color: #1f1f1f;
+      }
+
+      .site-footer {
+        background-color: #0f0f0f;
+      }
+
+      .card,
+      .gallery-item {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigasi -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <h2>Profil Amin</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="container">
+    <!-- Bagian Hero / Tentang -->
+    <section id="tentang" class="hero">
+      <img src="img/foto-profil.jpg" alt="Foto Profil" class="profile-img">
+      <div class="hero-text">
+        <h1>Halo, Saya Amin <span>Siswa RPL</span></h1>
+        <p>Saya adalah seorang siswa SMK Konsentrasi Rekayasa Perangkat Lunak yang berfokus pada pengembangan pemrograman web dan aplikasi. Saya senang mempelajari teknologi baru dan membuat antarmuka web yang responsif serta menarik.</p>
+      </div>
+    </section>
+
+    <!-- Bagian Keahlian -->
+    <section id="keahlian" class="skills-section">
+      <h2>Keahlian Saya</h2>
+      <div class="skills-grid">
+        <article class="card">
+          <h3>HTML & CSS</h3>
+          <p>Mampu menyusun struktur dokumen HTML semantik dan styling desain web responsif menggunakan CSS Modern (Flexbox, Grid, Media Query).</p>
+        </article>
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Memahami dasar-dasar logika pemrograman web interaktif, manipulasi DOM, serta penanganan event dasar.</p>
+        </article>
+        <article class="card">
+          <h3>UI/UX Design</h3>
+          <p>Dapat membuat perancangan wireframe dan antarmuka aplikasi yang intuitif serta berfokus pada kenyamanan pengguna (Mobile-First).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Bagian Portofolio / Galeri -->
+    <section id="portofolio" class="gallery-section">
+      <h2>Portofolio Proyek</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="img/image studio.png" alt="Proyek Image Studio">
+          <figcaption>
+            <h3>Aplikasi Image Studio</h3>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/cacing kremi.png" alt="Aplikasi Game Snake">
+          <figcaption>
+            <h3>Aplikasi Game Snake</h3>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/dashboard penjualan.png" alt="Aplikasi Dashboard Penjualan">
+          <figcaption>
+            <h3>Aplikasi Dashboard Penjualan Toko</h3>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Profil Diri. SMK Brantas Karangkates - Rekayasa Perangkat Lunak.</p>
+  </footer>
+
+</body>
+</html>
